@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KW Explore — Agent App</title>
+
+  <meta name="theme-color" content="#C70000" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-neutral-900 text-neutral-100 font-[Inter]">
+  <header class="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="KW Explore" class="h-8">
+        <p class="text-xs text-neutral-400">Where Entrepreneurs Thrive</p>
+      </div>
+
+      <!-- TOP TABS (4 on one line; first 3 unchanged) -->
+      <nav class="hidden md:flex items-center gap-2" aria-label="Primary">
+        <a href="https://calendar.google.com/" class="kwe-tab kwe-tab--compact">My Calendar</a>
+        <a href="https://mail.google.com/" class="kwe-tab kwe-tab--compact">My Mail</a>
+        <a href="https://thatrealestateguysa.github.io/learnmore/" class="kwe-tab kwe-tab--compact">Refer New Agent</a>
+        <a href="https://kweagentnextofkin.netlify.app/" class="kwe-tab kwe-tab--compact kwe-tab--red" title="Next-of-kin & medical info">KWE EMERGENCY CONTACTS</a>
+      </nav>
+
+      <button class="md:hidden rounded-xl border border-neutral-700 px-3 py-2 text-sm" id="mobileMenuBtn">Menu</button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="https://calendar.google.com/" class="kwe-tab w-full">My Calendar</a>
+        <a href="https://mail.google.com/" class="kwe-tab w-full">My Mail</a>
+        <a href="https://thatrealestateguysa.github.io/learnmore/" class="kwe-tab w-full">Refer New Agent</a>
+        <a href="https://kweagentnextofkin.netlify.app/" class="kwe-tab w-full kwe-tab--red">KWE EMERGENCY CONTACTS</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-6 space-y-10">
+    <section aria-label="Quick Links" class="mb-8" id="quickLinksRoot">
+
+      <!-- GROUP 1 -->
+      <h2 class="section-title">EXPLORE YOUR BUSINESS</h2>
+      <div class="quick-5">
+        <a class="btn" href="https://mapp.kwsouthafrica.co.za/Account/Login?returnUrl=%2F" target="_blank">MAPP</a>
+        <a class="btn" href="https://console.command.kw.com/command" target="_blank">COMMAND</a>
+        <a class="btn" href="https://drive.google.com/drive/" target="_blank">GOOGLE DRIVE</a>
+        <a class="btn" href="https://toolkit.lightstone.co.za/#/" target="_blank">LIGHTSTONE</a>
+        <a class="btn" href="https://www.cmainfo.co.za/" target="_blank">CMA INFO</a>
+
+        <button class="btn" type="button" data-panel="otpPanel">OTP / MANDATES</button>
+        <div class="panel-slot"><div id="otpPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://drive.google.com/drive/folders/1P_9v2kTheV4mzPt0h2Jtm4oozt3QrVFG?usp=drive_link">MANDATES</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/drive/folders/1SgDPogFFXti5vMFc7GiPRR_LjIHUySaP?usp=drive_link">OFFER TO PURCHASE</a>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="bondPanel">BOND PRE-APPROVAL</button>
+        <div class="panel-slot"><div id="bondPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://my.ooba.co.za/obi/?var1=KW4&var2=&var3=OBI&var4">GET A OOBA BOND</a>
+            <a class="subtab" href="#" id="bondGirlTab">THE BOND GIRL</a>
+          </div>
+          <div id="bondGirlCard" class="hidden mt-3">
+            <div class="p-4 rounded-lg border border-white/10 bg-black/30">
+              <div class="font-extrabold tracking-wide">MORICOLETTE ERASMUS-NEL</div>
+              <div class="text-red-300">THE BOND GIRL</div>
+              <p class="mt-2"><a class="underline" href="tel:+27725759054">+27 72 575 9054</a></p>
+              <p class="mt-1"><a class="underline" href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUSNEL@KWSA.CO.ZA</a></p>
+            </div>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="rentPanel">RENTAL DESK</button>
+        <div class="panel-slot"><div id="rentPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1HsmWsP35aBx0s8gykS-LeAzIQETbCLVj/view?usp=sharing">ROADMAP TO RENTALS</a>
+            <a class="subtab" target="_blank" href="https://www.weconnectu.co.za/redrabbit">RED RABBIT</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/drive/folders/1GlY8meqjLJFqTKLSipRr0CFXjgZYrdSE">RENTAL DOCUMENTS</a>
+            <a class="subtab" target="_blank" href="https://evictionsecure.co.za/">EVICTION SECURE</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1mE1k7g0W-u7b2u8H2LlN_6wL3qVkfj4/view?usp=drive_link">RENTAL POLICY & PROCEDURES</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1dlIv_sGXhoSwb7QKm_UiYQCAKF2s6mHQ/view?usp=drive_link">RENTAL FAQ</a>
+          </div>
+        </div></div>
+
+        <a class="btn" href="https://kweagentnextofkin.netlify.app/" target="_blank">KWE EMERGENCY CONTACTS</a>
+      </div>
+
+      <!-- GROUP 2 -->
+      <h2 class="section-title mt-8">EXPLORE THE GROWTH</h2>
+      <div class="quick-5">
+        <button class="btn" type="button" data-panel="productivityPanel">PRODUCTIVITY APPS</button>
+        <div class="panel-slot"><div id="productivityPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://docs.google.com/">DOCS</a>
+            <a class="subtab" target="_blank" href="https://docs.google.com/spreadsheets/">SHEETS</a>
+            <a class="subtab" target="_blank" href="https://docs.google.com/presentation/">SLIDES</a>
+            <a class="subtab" target="_blank" href="https://contacts.google.com/">CONTACTS</a>
+            <a class="subtab" target="_blank" href="https://chatgpt.com/">CHAT GPT</a>
+            <a class="subtab" target="_blank" href="https://gemini.google.com/app">GEMINI</a>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="marketingPanel">MARKETING</button>
+        <div class="panel-slot"><div id="marketingPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://authn.kw.com/saml20/idp/startsso?spEntityId=https://www.canva.com">CANVA (SSO)</a>
+            <a class="subtab" target="_blank" href="https://web.facebook.com/groups/236242439163189?_rdc=1&_rdr#">MAPPS TO EXPLORE DESIGNS</a>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="compliancePanel">COMPLIANCE</button>
+        <div class="panel-slot"><div id="compliancePanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://theppra.org.za/myffc">PPRA</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1ngSQQgKzl-3-BQ6VijgiZbyD8Fh8HByB/view?usp=sharing">CODE OF CONDUCT</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/12oz_bU_Tqnqlx9LJa3OPz2aY5mCFF80C/view?usp=sharing">FIC</a>
+            <a class="subtab" href="#" id="dncTab">DO NOT CALL LISTS</a>
+          </div>
+          <div id="dncRow" class="hidden subrow">
+            <a class="linkpill" target="_blank" href="https://www.thevirtualagent.co.za/info/#c-tab3-5">VIRTUAL AGENT</a>
+            <a class="linkpill" target="_blank" href="https://www.cmainfo.co.za/privacy.aspx">CMA INFO</a>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="resourcesPanel">RESOURCES</button>
+        <div class="panel-slot"><div id="resourcesPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://kellerink.com/">KELLER INK</a>
+            <a class="subtab" target="_blank" href="https://kwecgi.netlify.app/">CGI CALCULATOR</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1Ot82JX3nPrb1we1d1AdO5t1_k-YgWLb0/view?usp=sharing">VALUE MAP</a>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="exploreBoxPanel">EXPLORE IN A BOX</button>
+        <div class="panel-slot"><div id="exploreBoxPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" href="#" id="waTab">EXPLORE WHATSAPP</a>
+            <a class="subtab" href="#" id="techTab">KW EXPLORE TECH SUPPORT</a>
+            <a class="subtab" href="#" id="loeTab">LETTER OF EMPLOYMENT</a>
+            <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1HRhp_4CD1bvpHppBJWx9OXdYeuHZ_N09/view?usp=sharing">KW EXPLORE WELCOME PACK</a>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- GROUP 3 -->
+      <h2 class="section-title mt-8">CONTACT THE TEAM</h2>
+      <div class="quick-5">
+        <button class="btn" type="button" data-panel="partnersPanel">PARTNERS</button>
+        <div class="panel-slot"><div id="partnersPanel" class="panel hidden">
+          <div class="subtabbar">
+            <a class="subtab" target="_blank" href="https://www.vandeventers.law/">VAN DEVENTERS</a>
+            <a class="subtab" target="_blank" href="https://lmw.co.za/">LWM INC.</a>
+            <a class="subtab" target="_blank" href="https://www.hammondpole.co.za/">HAMMOND POLE</a>
+            <a class="subtab" target="_blank" href="https://www.ooba.co.za/product-determinator-v2/">OOBA</a>
+          </div>
+        </div></div>
+
+        <button class="btn" type="button" data-panel="leadershipPanel">CONTACT THE LEADERSHIP TEAM</button>
+        <div class="panel-slot"><div id="leadershipPanel" class="panel leadership hidden">
+          <div class="subtabbar">
+            <a class="subtab" href="#" data-target="estelle">ESTELLE FERREIRA</a>
+            <a class="subtab" href="#" data-target="shawn">SHAWN ARMER</a>
+            <a class="subtab" href="#" data-target="dawie">DAWIE DU TOIT</a>
+            <a class="subtab" href="#" data-target="rukudzo">RUKUDZO JAGADA</a>
+            <a class="subtab" href="#" data-target="casandra">CASANDRA VAN DER MERWE</a>
+            <a class="subtab" href="#" data-target="francois">FRANCOIS MULLER</a>
+            <a class="subtab" href="#" data-target="maryna">MARYNA MULLER</a>
+            <a class="subtab" href="#" data-target="mornay">MORNAY CLOETE</a>
+            <a class="subtab" href="#" data-target="bondgirl">MORICOLETTE ERASMUS-NEL</a>
+          </div>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-4 pb-10 pt-2 text-xs text-neutral-500">
+    © <span id="year"></span> KW Explore Fourways • Agent App
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
