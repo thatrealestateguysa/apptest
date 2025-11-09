@@ -19,7 +19,8 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 .brand{display:grid;place-items:center;gap:.5rem}
 .brand img.logo{width:var(--logoW);height:auto}
 .brand img.tagline{width:calc(var(--logoW)*.40);height:auto}
-.btn{display:block;width:100%;color:#fff;font-weight:800;letter-spacing:.02em;padding:.95rem 1.05rem;border-radius:1.1rem;text-align:center;line-height:1.2;border:1px solid rgba(255,255,255,.08);box-shadow:0 1px 0 rgba(0,0,0,.25) inset;white-space:normal;overflow-wrap:anywhere;hyphens:auto;transition:background .12s,border-color .12s,filter .12s,transform .02s}
+/* BUTTON TABS: center text horizontally & vertically and allow wrapping */
+.btn{display:flex;align-items:center;justify-content:center;width:100%;color:#fff;font-weight:800;letter-spacing:.02em;padding:.95rem 1.05rem;border-radius:1.1rem;text-align:center;line-height:1.2;border:1px solid rgba(255,255,255,.08);box-shadow:0 1px 0 rgba(0,0,0,.25) inset;white-space:normal;overflow-wrap:anywhere;word-break:break-word;hyphens:auto;transition:background .12s,border-color .12s,filter .12s,transform .02s}
 .btn:hover{background:var(--hover);border-color:var(--hover);filter:brightness(1.02);position:relative;z-index:5}
 .btn:active{transform:translateY(1px)}
 .btn.active{background:var(--kwred)!important;border-color:var(--kwred)!important;position:relative;z-index:6}
@@ -32,20 +33,26 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 @media(min-width:1024px){.group-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .group-grid>.btn:nth-child(odd){background:var(--g1)}
 .group-grid>.btn:nth-child(even){background:var(--g2)}
-.section-title{font-weight:900;margin:.8rem 0 .5rem}
+/* GROUP NAMES: make red and centered */
+.section-title{font-weight:900;margin:.8rem 0 .5rem;color:var(--kwred);text-align:center}
 .panel-slot{display:none}.panel-slot.open{display:block;grid-column:1 / -1}.panel{display:none}.panel.open{display:block}
-.subtabbar{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
-.subtab{background:#1b2330;color:#fff;font-weight:900;padding:.7rem 1rem;border-radius:.9rem;border:2px solid rgba(255,255,255,.08)}
+/* SUBTABS: center row and each tab; allow wrapping especially on mobile */
+.subtabbar{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem;justify-content:center}
+.subtab{display:flex;align-items:center;justify-content:center;background:#1b2330;color:#fff;font-weight:900;padding:.7rem 1rem;border-radius:.9rem;border:2px solid rgba(255,255,255,.08);text-align:center;white-space:normal;overflow-wrap:anywhere;word-break:break-word;hyphens:auto;line-height:1.2}
 .subtab:hover,.subtab[aria-selected=true]{background:var(--hover);border-color:var(--hover)}
 .subtab.open-sub{border-color:var(--kwred)}
 .subrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
-.linkpill{background:#131a1f;border:1px solid rgba(255,255,255,.1);padding:.6rem 1rem;border-radius:.8rem;font-weight:800}
+.linkpill{background:#131a1f;border:1px solid rgba(255,255,255,.1);padding:.6rem 1rem;border-radius:.8rem;font-weight:800;text-align:center}
 .linkpill:hover{background:#182233}
 .leadership *{text-transform:uppercase}
 .leader-card{background:#131a1f;border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1rem}
 .leader-name{font-weight:900;font-size:1.35rem}
 .leader-role{color:#fca5a5;font-weight:800;margin-top:.25rem}
 .leader-links a{text-decoration:underline}
+/* --- polish: lock vertical centering & wrapping for all tabs (web + mobile) --- */
+.btn{min-height:clamp(56px,9vw,84px);text-wrap:balance}
+.subtab{min-height:48px;text-wrap:balance}
+@media(max-width:640px){.btn{min-height:64px}}
 </style>
 </head>
 <body class="bg-black text-white">
@@ -91,7 +98,7 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
                 <div class="font-extrabold tracking-wide">MORICOLETTE ERASMUS-NEL</div>
                 <div class="text-red-300">THE BOND GIRL</div>
                 <p class="mt-2"><a class="underline" href="tel:+27725759054">+27 72 575 9054</a></p>
-                <p class="mt-1"><a class="underline" href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUSNEL@KWSA.CO.ZA</a></p>
+                <p class="mt-1"><a class="underline" href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUS-NEL@KWSA.CO.ZA</a></p>
               </div>
             </div>
           </div></div>
@@ -294,7 +301,7 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
               <div id="bondgirl" class="leader-card hidden">
                 <div class="leader-name">MORICOLETTE ERASMUS-NEL</div>
                 <div class="leader-role">THE BOND GIRL</div>
-                <div class="leader-links mt-2"><a href="tel:+27725759054">072 575 9054</a> · <a href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUSNEL@KWSA.CO.ZA</a></div>
+                <div class="leader-links mt-2"><a href="tel:+27725759054">072 575 9054</a> · <a href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUS-NEL@KWSA.CO.ZA</a></div>
               </div>
             </div>
           </div></div>
@@ -329,7 +336,7 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
   });
   function wireToggle(tabId,rowId){
     const tab=document.getElementById(tabId),row=document.getElementById(rowId);if(!tab||!row)return;
-    tab.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const hide=!row.classList.toggle('hidden');if(hide){tab.classList.add('open-sub')}else{tab.classList.remove('open-sub')}})
+    tab.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const hide=!row.classList.toggle('hidden');if(hide){tab.classList.add('open-sub")}else{tab.classList.remove('open-sub')}})
   }
   wireToggle('bondGirlTab','bondGirlCard');wireToggle('dncTab','dncRow');wireToggle('waTab','waRow');wireToggle('techTab','techRow');wireToggle('loeTab','loeRow');
   document.getElementById('leadershipPanel')?.querySelector('.subtabbar')?.addEventListener('click',e=>{
