@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KWE AGENT DASHBOARD</title>
+<meta name="theme-color" content="#dc2626">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="assets/apple-touch-icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png">
+<link rel="manifest" href="manifest.json">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--kwred:#dc2626;--g1:#2b3541;--g2:#232c37;--hover:#dc2626;--logoW:clamp(220px,60vw,560px)}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.brand{display:grid;place-items:center;gap:.5rem}
+.brand img.logo{width:var(--logoW);height:auto}
+.brand img.tagline{width:calc(var(--logoW)*.40);height:auto}
+.btn{display:block;width:100%;color:#fff;font-weight:800;letter-spacing:.02em;padding:.95rem 1.05rem;border-radius:1.1rem;text-align:center;line-height:1.2;border:1px solid rgba(255,255,255,.08);box-shadow:0 1px 0 rgba(0,0,0,.25) inset;white-space:normal;overflow-wrap:anywhere;hyphens:auto;transition:background .12s,border-color .12s,filter .12s,transform .02s}
+.btn:hover{background:var(--hover);border-color:var(--hover);filter:brightness(1.02);position:relative;z-index:5}
+.btn:active{transform:translateY(1px)}
+.btn.active{background:var(--kwred)!important;border-color:var(--kwred)!important;position:relative;z-index:6}
+.main-three{display:grid;grid-template-columns:1fr;gap:.8rem}
+@media(min-width:640px){.main-three{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.main-three{grid-template-columns:repeat(4,1fr)}}
+.group-block{margin-bottom:1.75rem}
+.group-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
+@media(min-width:640px){.group-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1024px){.group-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.group-grid>.btn:nth-child(odd){background:var(--g1)}
+.group-grid>.btn:nth-child(even){background:var(--g2)}
+.section-title{font-weight:900;margin:.8rem 0 .5rem;color:var(--kwred);text-align:center}
+.panel-slot{display:none}.panel-slot.open{display:block;grid-column:1 / -1}.panel{display:none}.panel.open{display:block}
+.subtabbar{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+.subtab{background:#1b2330;color:#fff;font-weight:900;padding:.7rem 1rem;border-radius:.9rem;border:2px solid rgba(255,255,255,.08)}
+.subtab:hover,.subtab[aria-selected=true]{background:var(--hover);border-color:var(--hover)}
+.subtab.open-sub{border-color:var(--kwred)}
+.subrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+.linkpill{background:#131a1f;border:1px solid rgba(255,255,255,.1);padding:.6rem 1rem;border-radius:.8rem;font-weight:800}
+.linkpill:hover{background:#182233}
+.leadership *{text-transform:uppercase}
+.leader-card{background:#131a1f;border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1rem}
+.leader-name{font-weight:900;font-size:1.35rem}
+.leader-role{color:#fca5a5;font-weight:800;margin-top:.25rem}
+.leader-links a{text-decoration:underline}
+</style>
+<style>
+/* Added by assistant: tagline styling */
+.tagline-accent {
+  color: #d10000;          /* red */
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.5rem); /* scale up responsively */
+  font-weight: 700;
+}
+</style>
+</head>
+<body class="bg-black text-white">
+  <div class="max-w-6xl mx-auto p-4 md:p-6">
+    <header class="brand text-center mb-4">
+      <img src="assets/logo.png" class="logo" alt="KW Explore Logo">
+      <img src="assets/tagline.png" class="tagline" alt="Where Entrepreneurs Thrive">
+      <p class="uppercase tracking-wide text-gray-300 text-sm md:text-base mt-2">
+        <span class="tagline-accent">Explore the World of Property with us!</span>
+      </p>
+    </header>
+
+    <section class="mb-6" aria-label="Main tabs">
+      <div class="main-three">
+        <a class="btn" style="background:var(--g1)" target="_blank" href="https://calendar.google.com/calendar/">CALENDAR</a>
+        <a class="btn" style="background:var(--g2)" target="_blank" href="https://mail.google.com/mail/">MY MAIL</a>
+        <a class="btn active" target="_blank" href="https://thatrealestateguysa.github.io/learnmore/">REFER A NEW AGENT</a>
+        <a class="btn active" target="_blank" href="https://kweagentnextofkin.netlify.app/">EMERGENCY CONTACT UPDATE</a>
+      </div>
+    </section>
+
+    <section aria-label="KWE Agent Dashboard" id="quickLinksRoot">
+
+      <!-- EXPLORE YOUR BUSINESS -->
+      <section class="group-block" aria-label="Explore business">
+        <h2 class="section-title">EXPLORE BUSINESS</h2>
+        <div class="group-grid">
+          <a class="btn" href="https://mapp.kwsouthafrica.co.za/Account/Login?returnUrl=%2F" target="_blank">MAPP</a>
+          <a class="btn" href="https://console.command.kw.com/command" target="_blank">COMMAND</a>
+          <a class="btn" href="https://toolkit.lightstone.co.za/#/" target="_blank">LIGHTSTONE</a>
+          <a class="btn" href="https://app.thevirtualagent.co.za/User/sign-in" target="_blank">THE VIRTUAL AGENT</a>
+          <a class="btn" href="https://www.cmainfo.co.za/" target="_blank">CMA INFO</a>
+
+          <!-- Bond -->
+          <button class="btn" type="button" data-panel="bondPanel">BOND PRE-APPROVAL</button>
+          <div class="panel-slot"><div id="bondPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://my.ooba.co.za/obi/?var1=KW4&var2=&var3=OBI&var4">GET A OOBA BOND</a>
+              <a class="subtab" href="#" id="bondGirlTab">THE BOND GIRL</a>
+            </div>
+            <div id="bondGirlCard" class="hidden mt-3">
+              <div class="p-4 rounded-lg border border-white/10 bg-black/30">
+                <div class="font-extrabold tracking-wide">MORICOLETTE ERASMUS-NEL</div>
+                <div class="text-red-300">THE BOND GIRL</div>
+                <p class="mt-2"><a class="underline" href="tel:+27725759054">+27 72 575 9054</a></p>
+                <p class="mt-1"><a class="underline" href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUSNEL@KWSA.CO.ZA</a></p>
+              </div>
+            </div>
+          </div></div>
+
+          <!-- Rental Desk -->
+          <button class="btn" type="button" data-panel="rentPanel">RENTAL DESK</button>
+          <div class="panel-slot"><div id="rentPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1HsmWsP35aBx0s8gykS-LeAzIQETbCLVj/view?usp=sharing">ROADMAP TO RENTALS</a>
+              <a class="subtab" target="_blank" href="https://www.weconnectu.co.za/redrabbit">RED RABBIT</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/drive/folders/1GlY8meqjLJFqTKLSipRr0CFXjgZYrdSE">RENTAL DOCUMENTS</a>
+              <a class="subtab" target="_blank" href="https://evictionsecure.co.za/">EVICTION SECURE</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1mE1k7g0W-u7b2u8H2LlN_6wL3qVkfj4/view?usp=drive_link">RENTAL POLICY & PROCEDURES</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1dlIv_sGXhoSwb7QKm_UiYQCAKF2s6mHQ/view?usp=drive_link">RENTAL FAQ</a>
+            </div>
+          </div></div>
+        </div>
+      </section>
+
+      <!-- EXPLORE DOCUMENTS -->
+      <section class="group-block" aria-label="Explore documents">
+        <h2 class="section-title">EXPLORE DOCUMENTS</h2>
+        <div class="group-grid">
+          <a class="btn" href="https://drive.google.com/drive/" target="_blank">GOOGLE DRIVE</a>
+
+          <!-- OTP / Mandates -->
+          <button class="btn" type="button" data-panel="otpPanel">OTP / MANDATES</button>
+          <div class="panel-slot"><div id="otpPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://drive.google.com/drive/folders/1P_9v2kTheV4mzPt0h2Jtm4oozt3QrVFG?usp=drive_link">MANDATES</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/drive/folders/1SgDPogFFXti5vMFc7GiPRR_LjIHUySaP?usp=drive_link">OFFER TO PURCHASE</a>
+            </div>
+          </div></div>
+
+          <a class="btn" href="https://drive.google.com/drive/folders/17t9lC6d9cZHPltRiKw3CVtporeDzxTbT" target="_blank">AGENT TOOLKIT</a>
+        </div>
+      </section>
+
+      <!-- EXPLORE TOOLS -->
+      <section class="group-block" aria-label="Explore tools">
+        <h2 class="section-title">EXPLORE TOOLS</h2>
+        <div class="group-grid">
+          <a class="btn" href="https://www.property24.com/" target="_blank">PROPERTY 24</a>
+          <a class="btn" href="https://www.privateproperty.co.za/" target="_blank">PRIVATE PROPERTY</a>
+          <a class="btn" href="https://web.whatsapp.com/" target="_blank">WHATSAPP WEB</a>
+        </div>
+      </section>
+
+      <!-- EXPLORE GROWTH -->
+      <section class="group-block" aria-label="Explore growth">
+        <h2 class="section-title">EXPLORE GROWTH</h2>
+        <div class="group-grid">
+          <!-- Productivity Apps -->
+          <button class="btn" type="button" data-panel="productivityPanel">PRODUCTIVITY APPS</button>
+          <div class="panel-slot"><div id="productivityPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://docs.google.com/">DOCS</a>
+              <a class="subtab" target="_blank" href="https://docs.google.com/spreadsheets/">SHEETS</a>
+              <a class="subtab" target="_blank" href="https://docs.google.com/presentation/">SLIDES</a>
+              <a class="subtab" target="_blank" href="https://contacts.google.com/">CONTACTS</a>
+              <a class="subtab" target="_blank" href="https://chatgpt.com/">CHAT GPT</a>
+              <a class="subtab" target="_blank" href="https://gemini.google.com/app">GEMINI</a>
+            </div>
+          </div></div>
+
+          <!-- Marketing -->
+          <button class="btn" type="button" data-panel="marketingPanel">MARKETING</button>
+          <div class="panel-slot"><div id="marketingPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://authn.kw.com/saml20/idp/startsso?spEntityId=https://www.canva.com">CANVA (SSO)</a>
+              <a class="subtab" target="_blank" href="https://web.facebook.com/groups/236242439163189?_rdc=1&_rdr#">MAPPS TO EXPLORE DESIGNS</a>
+            </div>
+          </div></div>
+
+          <!-- Compliance -->
+          <button class="btn" type="button" data-panel="compliancePanel">COMPLIANCE</button>
+          <div class="panel-slot"><div id="compliancePanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://theppra.org.za/myffc">PPRA</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1ngSQQgKzl-3-BQ6VijgiZbyD8Fh8HByB/view?usp=sharing">CODE OF CONDUCT</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/12oz_bU_Tqnqlx9LJa3OPz2aY5mCFF80C/view?usp=sharing">FIC</a>
+              <a class="subtab" href="#" id="dncTab">DO NOT CALL LISTS</a>
+            </div>
+            <div id="dncRow" class="hidden subrow">
+              <a class="linkpill" target="_blank" href="https://www.thevirtualagent.co.za/info/#c-tab3-5">VIRTUAL AGENT</a>
+              <a class="linkpill" target="_blank" href="https://www.cmainfo.co.za/privacy.aspx">CMA INFO</a>
+            </div>
+          </div></div>
+
+          <!-- Resources -->
+          <button class="btn" type="button" data-panel="resourcesPanel">RESOURCES</button>
+          <div class="panel-slot"><div id="resourcesPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://kellerink.com/">KELLER INK</a>
+              <a class="subtab" target="_blank" href="https://kwecgi.netlify.app/">CGI CALCULATOR</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1Ot82JX3nPrb1we1d1AdO5t1_k-YgWLb0/view?usp=sharing">VALUE MAP</a>
+            </div>
+          </div></div>
+
+          <!-- Explore in a Box -->
+          <button class="btn" type="button" data-panel="exploreBoxPanel">EXPLORE IN A BOX</button>
+          <div class="panel-slot"><div id="exploreBoxPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" href="#" id="waTab">EXPLORE WHATSAPP</a>
+              <a class="subtab" href="#" id="techTab">KW EXPLORE TECH SUPPORT</a>
+              <a class="subtab" href="#" id="loeTab">LETTER OF EMPLOYMENT</a>
+              <a class="subtab" target="_blank" href="https://drive.google.com/file/d/1HRhp_4CD1bvpHppBJWx9OXdYeuHZ_N09/view?usp=sharing">KW EXPLORE WELCOME PACK</a>
+            </div>
+            <div id="waRow" class="hidden subrow">
+              <a class="linkpill" target="_blank" href="https://chat.whatsapp.com/Fo9u1JwPQPX5jKFxkxireB">KWE BUSINESS</a>
+              <a class="linkpill" target="_blank" href="https://chat.whatsapp.com/7Vt6td3OTf6AnC9UAZ2NrW">KWE FAMILY</a>
+              <a class="linkpill" target="_blank" href="https://chat.whatsapp.com/BmC5OcpGr0fEsSNjBjs9V6">KWE MINDSET</a>
+              <a class="linkpill" target="_blank" href="https://chat.whatsapp.com/KhXyuE7SMBzKa4zmKjT8V2">KWE TRADING FLOOR</a>
+              <a class="linkpill" target="_blank" href="https://chat.whatsapp.com/FJjYfQR22CWCJoi14kZxFa">KWE RENTALS</a>
+              <a class="linkpill" target="_blank" href="https://chat.whatsapp.com/GgAtHnEYmXmAQEXzEl0DkC?mode=wwc">KWE COMMERCIAL</a>
+            </div>
+            <div id="techRow" class="hidden subrow">
+              <a class="linkpill" target="_blank" href="https://calendar.app.google/8351gr38GWZpT1vL7">BOOK 1-ON-1</a>
+              <a class="linkpill" target="_blank" href="https://www.youtube.com/playlist?list=PLK75KZDqV1zlNlNbAYLPDegh4Rje76NNL">COMMAND 66 DAY CHALLENGE</a>
+              <a class="linkpill" target="_blank" href="https://answers.kw.com/hc/en-us">FAQ COMMAND</a>
+            </div>
+            <div id="loeRow" class="hidden subrow">
+              <a class="linkpill" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfXYVHkzEEDTycJx-lN8iFcW7rwo6rdEVPjSGIfzvsuvmzUlA/viewform">GENERAL LETTER OF EMPLOYMENT</a>
+              <a class="linkpill" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd0yabWfk6dM9JwDUxRofYdI9m9S66ZbhwlIKMIN3iXXfREdg/viewform">SARS & PPRA LETTER OF EMPLOYMENT</a>
+            </div>
+          </div></div>
+        </div>
+      </section>
+
+      <!-- CONTACT THE TEAM -->
+      <section class="group-block" aria-label="Explore team">
+        <h2 class="section-title">EXPLORE TEAM</h2>
+        <div class="group-grid">
+          <!-- Partners -->
+          <button class="btn" type="button" data-panel="partnersPanel">PARTNERS</button>
+          <div class="panel-slot"><div id="partnersPanel" class="panel">
+            <div class="subtabbar">
+              <a class="subtab" target="_blank" href="https://www.vandeventers.law/">VAN DEVENTERS</a>
+              <a class="subtab" target="_blank" href="https://lmw.co.za/">LWM INC.</a>
+              <a class="subtab" target="_blank" href="https://www.hammondpole.co.za/">HAMMOND POLE</a>
+              <a class="subtab" target="_blank" href="https://www.ooba.co.za/product-determinator-v2/?paid_campaign=search&landing_page=homeloan1&adwords_campaign_id=1615939422&gclid=Cj0KCQjwrfymBhCTARIsADXTabn4IM5wvINZrk6RE8ePkpkWcMaHiH3fzglJthHjrXIPCmY_NrUw8yUaAuwFEALw_wcB">OOBA</a>
+            </div>
+          </div></div>
+
+          <!-- Leadership -->
+          <button class="btn" type="button" data-panel="leadershipPanel">CONTACT THE LEADERSHIP TEAM</button>
+          <div class="panel-slot"><div id="leadershipPanel" class="panel leadership">
+            <div class="subtabbar">
+              <a class="subtab" href="#" data-target="estelle">ESTELLE FERREIRA</a>
+              <a class="subtab" href="#" data-target="shawn">SHAWN ARMER</a>
+              <a class="subtab" href="#" data-target="dawie">DAWIE DU TOIT</a>
+              <a class="subtab" href="#" data-target="rukudzo">RUKUDZO JAGADA</a>
+              <a class="subtab" href="#" data-target="casandra">CASANDRA VAN DER MERWE</a>
+              <a class="subtab" href="#" data-target="francois">FRANCOIS MULLER</a>
+              <a class="subtab" href="#" data-target="maryna">MARYNA MULLER</a>
+              <a class="subtab" href="#" data-target="mornay">MORNAY CLOETE</a>
+              <a class="subtab" href="#" data-target="bondgirl">MORICOLETTE ERASMUS-NEL</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+              <div id="estelle" class="leader-card hidden">
+                <div class="leader-name">ESTELLE FERREIRA</div>
+                <div class="leader-role">PRINCIPAL PROPERTY PRACTITIONER</div>
+                <div class="leader-links mt-2"><a href="tel:+27824606864">+27 82 460 6864</a> · <a href="mailto:estelle.ferreira@kwsa.co.za">ESTELLE.FERREIRA@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="shawn" class="leader-card hidden">
+                <div class="leader-name">SHAWN ARMER</div>
+                <div class="leader-role">OPERATING PARTNER</div>
+                <div class="leader-links mt-2"><a href="tel:+27815335683">+27 81 533 5683</a> · <a href="mailto:shawn.armer@kwsa.co.za">SHAWN.ARMER@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="dawie" class="leader-card hidden">
+                <div class="leader-name">DAWIE DU TOIT</div>
+                <div class="leader-role">TEAM LEADER</div>
+                <div class="leader-links mt-2"><a href="tel:+27840624865">+27 84 062 4865</a> · <a href="mailto:dawie.dutoit@kwsa.co.za">DAWIE.DUTOIT@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="rukudzo" class="leader-card hidden">
+                <div class="leader-name">RUKUDZO JAGADA</div>
+                <div class="leader-role">MARKET CENTRE ADMINISTRATOR</div>
+                <div class="leader-links mt-2"><a href="tel:+27785848244">+27 78 584 8244</a> · <a href="mailto:rukudzo.jagada@kwsa.co.za">RUKUDZO.JAGADA@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="casandra" class="leader-card hidden">
+                <div class="leader-name">CASANDRA VAN DER MERWE</div>
+                <div class="leader-role">MCTT / DFI</div>
+                <div class="leader-links mt-2"><a href="tel:+27842121991">+27 84 212 1991</a> · <a href="mailto:casandra.vdmerwe@kwsa.co.za">CASANDRA.VDMERWE@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="francois" class="leader-card hidden">
+                <div class="leader-name">FRANCOIS MULLER</div>
+                <div class="leader-role">RENTAL MANAGER</div>
+                <div class="leader-links mt-2"><a href="tel:+27824402482">082 440 2482</a> · <a href="mailto:francois.muller@kwsa.co.za">FRANCOIS.MULLER@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="maryna" class="leader-card hidden">
+                <div class="leader-name">MARYNA MULLER</div>
+                <div class="leader-role">RENTAL ADMINISTRATOR</div>
+                <div class="leader-links mt-2"><a href="tel:+27768922404">076 892 2404</a> · <a href="mailto:maryna.muller@kwsa.co.za">MARYNA.MULLER@KWSA.CO.ZA</a></div>
+              </div>
+              <div id="mornay" class="leader-card hidden">
+                <div class="leader-name">MORNAY CLOETE</div>
+                <div class="leader-role">COMMERCIAL DEPARTMENT | CORPORATE REAL ESTATE CONSULTANT | PROPERTY INVESTMENT STRATEGIST</div>
+                <div class="leader-links mt-2"><a href="tel:+27828886602">+27 82 888 6602</a> · <a href="mailto:mornay@emacity.co.za">MORNAY@EMACITY.CO.ZA</a></div>
+              </div>
+              <div id="bondgirl" class="leader-card hidden">
+                <div class="leader-name">MORICOLETTE ERASMUS-NEL</div>
+                <div class="leader-role">THE BOND GIRL</div>
+                <div class="leader-links mt-2"><a href="tel:+27725759054">072 575 9054</a> · <a href="mailto:moricolette.erasmusnel@kwsa.co.za">MORICOLETTE.ERASMUSNEL@KWSA.CO.ZA</a></div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </section>
+
+    </section>
+  </div>
+<script>
+(function(){
+  const root=document.getElementById('quickLinksRoot');
+  function closeAll(){
+    document.querySelectorAll('.panel.open').forEach(p=>p.classList.remove('open'));
+    document.querySelectorAll('.panel-slot.open').forEach(s=>s.classList.remove('open'));
+    document.querySelectorAll('[data-panel].active').forEach(b=>b.classList.remove('active'));
+    ['bondGirlCard','dncRow','waRow','techRow','loeRow'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.add('hidden')});
+    document.querySelectorAll('#leadershipPanel .leader-card').forEach(c=>c.classList.add('hidden'));
+    document.querySelectorAll('.subtab.open-sub').forEach(el=>el.classList.remove('open-sub'));
+  }
+  function closeOthers(exceptPanelId){
+    document.querySelectorAll('.panel').forEach(p=>{if(p.id!==exceptPanelId)p.classList.remove('open')});
+    document.querySelectorAll('.panel-slot').forEach(slot=>{const p=slot.querySelector('.panel');if(!p||p.id!==exceptPanelId)slot.classList.remove('open')});
+    document.querySelectorAll('[data-panel]').forEach(b=>{if(b.dataset.panel!==exceptPanelId)b.classList.remove('active')});
+  }
+  root.addEventListener('click',function(e){
+    const trigger=e.target.closest('[data-panel]');if(!trigger)return;
+    e.preventDefault();e.stopPropagation();
+    const slot=trigger.nextElementSibling;const panel=slot?slot.querySelector('.panel'):null;if(!slot||!panel)return;
+    const isOpen=panel.classList.contains('open');
+    if(isOpen){panel.classList.remove('open');slot.classList.remove('open');trigger.classList.remove('active')}
+    else{closeOthers(panel.id);slot.classList.add('open');panel.classList.add('open');trigger.classList.add('active')}
+  });
+  function wireToggle(tabId,rowId){
+    const tab=document.getElementById(tabId),row=document.getElementById(rowId);if(!tab||!row)return;
+    tab.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const hide=!row.classList.toggle('hidden');if(hide){tab.classList.add('open-sub')}else{tab.classList.remove('open-sub')}})
+  }
+  wireToggle('bondGirlTab','bondGirlCard');wireToggle('dncTab','dncRow');wireToggle('waTab','waRow');wireToggle('techTab','techRow');wireToggle('loeTab','loeRow');
+  document.getElementById('leadershipPanel')?.querySelector('.subtabbar')?.addEventListener('click',e=>{
+    const t=e.target.closest('.subtab[data-target]');if(!t)return;e.preventDefault();e.stopPropagation();
+    document.querySelectorAll('#leadershipPanel .leader-card').forEach(c=>c.classList.add('hidden'));
+    document.getElementById(t.dataset.target)?.classList.remove('hidden');
+  });
+  document.addEventListener('click',e=>{if(!root.contains(e.target))closeAll()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
+})();
+</script>
+</body>
+</html>
