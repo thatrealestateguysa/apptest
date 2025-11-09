@@ -1,0 +1,16 @@
+{
+  "name": "kwe-disc-webapp",
+  "version": "1.0.0",
+  "description": "KWE DISC Profile web app \u2013 collects details and emails a report PDF",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "KWE DISC",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  }
+}
